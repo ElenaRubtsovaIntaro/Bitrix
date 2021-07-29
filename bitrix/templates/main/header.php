@@ -7,12 +7,12 @@ IncludeTemplateLangFile(__FILE__);
     <?$APPLICATION->ShowHead();?>
     <title><?$APPLICATION->ShowTitle()?></title>
 
-    <link rel="stylesheet" href="/bitrix/templates/.default/template_style.css">
+    <?$APPLICATION->SetAdditionalCSS("/bitrix/templates/.default/template_style.css", true);?>
 
-    <script type="text/javascript" src="/bitrix/templates/.default/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="/bitrix/templates/.default/js/slides.min.jquery.js"></script>
-    <script type="text/javascript" src="/bitrix/templates/.default/js/jquery.carouFredSel-6.1.0-packed.js"></script>
-    <script type="text/javascript" src="/bitrix/templates/.default/js/functions.js"></script>
+    <?$APPLICATION->AddHeadScript('/bitrix/templates/.default/js/jquery-1.8.2.min.js');?>
+    <?$APPLICATION->AddHeadScript("/bitrix/templates/.default/js/slides.min.jquery.js");?>
+    <?$APPLICATION->AddHeadScript("/bitrix/templates/.default/js/jquery.carouFredSel-6.1.0-packed.js");?>
+    <?$APPLICATION->AddHeadScript("/bitrix/templates/.default/js/functions.js");?>
 
     <link rel="shortcut icon" type="image/x-icon" href="/bitrix/templates/.default/favicon.ico">
     <!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
@@ -64,40 +64,38 @@ IncludeTemplateLangFile(__FILE__);
                     </td>
                 </tr>
             </table>
-            <div class="nv_topnav">
-                <ul>
-                    <li><a class="menu-img-fon" style="background-image: url(images/nv_home.png);" href="/"><span></span></a></li>
-                    <li><a href=""><span>Компания</span></a>
-                        <ul>
-                            <li><a href="">Пункт 1</a></li>
-                            <li><a href="">Пункт 2</a></li>
-                            <li><a href="">Пункт 3</a></li>
-                            <li><a href="">Пункт 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href=""><span>Новости</span></a></li>
-                    <li><a href=""><span>Каталог</span></a></li>
-                    <li><a href=""><span>Акции</span></a>
-                        <ul>
-                            <li><a href="">Пункт 1</a>
-                                <ul>
-                                    <li><a href="">Пункт 1</a></li>
-                                    <li><a href="">Пункт 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="">Пункт 2</a></li>
-                            <li><a href="">Пункт 3</a></li>
-                            <li><a href="">Пункт 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/partneram/"><span>Партнерам</span></a></li>
-                    <li><a href=""><span>Контакты</span></a></li>
-                    <div class="clearboth"></div>
-                </ul>
-            </div>
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "top_multi",
+                array(
+                    "ALLOW_MULTI_SELECT" => "N",
+                    "CHILD_MENU_TYPE" => "left",
+                    "COMPONENT_TEMPLATE" => "top_multi",
+                    "DELAY" => "N",
+                    "MAX_LEVEL" => "1",
+                    "MENU_CACHE_GET_VARS" => array(
+                    ),
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_TYPE" => "N",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "ROOT_MENU_TYPE" => "top",
+                    "USE_EXT" => "N"
+                ),
+                false
+            );?>
         </div>
     </div>
-
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:breadcrumb",
+        "nav",
+        array(
+            "START_FROM" => "0",
+            "PATH" => "",
+            "SITE_ID" => "s1",
+            "COMPONENT_TEMPLATE" => "nav"
+        ),
+        false
+    );?>
     <!--- // end header area --->
 
     <script type="text/javascript" >
