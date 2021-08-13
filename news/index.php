@@ -23,7 +23,7 @@ $APPLICATION->SetTitle("Новости");
 		"CHECK_DATES" => "Y",
 		"SEF_MODE" => "Y",
 		"SEF_FOLDER" => "/news/",
-		"AJAX_MODE" => "N",
+		"AJAX_MODE" => "Y",
 		"AJAX_OPTION_SHADOW" => "N",
 		"AJAX_OPTION_JUMP" => "Y",
 		"AJAX_OPTION_STYLE" => "Y",
@@ -53,7 +53,7 @@ $APPLICATION->SetTitle("Новости");
 		"META_KEYWORDS" => "-",
 		"META_DESCRIPTION" => "-",
 		"BROWSER_TITLE" => "-",
-		"DETAIL_ACTIVE_DATE_FORMAT" => "j F Y",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_FIELD_CODE" => array(
 			0 => "",
 			1 => "",
@@ -89,6 +89,9 @@ $APPLICATION->SetTitle("Новости");
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SHOW_404" => "N",
 		"MESSAGE_404" => "",
+		"TEMPLATE_THEME" => "blue",
+		"MEDIA_PROPERTY" => "",
+		"SLIDER_PROPERTY" => "",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
@@ -98,4 +101,7 @@ $APPLICATION->SetTitle("Новости");
 		)
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);
+$APPLICATION->AddChainItem("t1", "/t1.php");
+$APPLICATION->AddChainItem("t2", "/t2.php");
+?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
