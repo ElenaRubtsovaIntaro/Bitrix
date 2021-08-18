@@ -25,7 +25,7 @@ $aMenuLinks = Array(
 		"Услуги", 
 		"services/", 
 		Array(), 
-		Array(), 
+		Array("MENU_COLOR"=>"color-yellow"), 
 		"" 
 	),
 	Array(

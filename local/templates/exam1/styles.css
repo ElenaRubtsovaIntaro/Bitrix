@@ -3258,6 +3258,10 @@ hr + .catalog-box {
     color: #00ff43;
 }
 
+.nav .menu .color-yellow{
+    color: #eeff0e;
+}
+
 .side-block .red {
     background: linear-gradient(#fda3a3, #ff0000);
 }
