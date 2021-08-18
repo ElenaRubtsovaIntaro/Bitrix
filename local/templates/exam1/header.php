@@ -123,13 +123,17 @@ if ($iHours >= 9 && $iHours <= 18) {
 
     <!-- breadcrumbs -->
     <? if (!$bIsMain): ?>
-        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "inner", Array(
-            "PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
-            "SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
-            "START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
-            ),
-            false
-        );?>
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"nav", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "0",
+		"COMPONENT_TEMPLATE" => "nav"
+	),
+	false
+);?>
     <? endif; ?>
     <!-- /breadcrumbs -->
 

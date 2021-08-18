@@ -14,7 +14,7 @@ $APPLICATION->IncludeComponent(
 		"PRODUCT_ID_VARIABLE" => "id",
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SEF_MODE" => "Y",
-		"SEF_FOLDER" => "/site_bm/products/",
+		"SEF_FOLDER" => "/products/",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_SHADOW" => "Y",
 		"AJAX_OPTION_JUMP" => "N",
