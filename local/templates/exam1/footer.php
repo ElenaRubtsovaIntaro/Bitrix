@@ -37,17 +37,17 @@ use Bitrix\Main\Localization\Loc;
 
     <!-- side anonse -->
     <? $APPLICATION->IncludeComponent(
-        "bitrix:main.include",
-        "useful",
-        [
-            "AREA_FILE_RECURSIVE" => "Y",
-            "AREA_FILE_SHOW" => "sect",
-            "AREA_FILE_SUFFIX" => "useful",
-            "COMPONENT_TEMPLATE" => "useful",
-            "EDIT_TEMPLATE" => "",
-        ],
-        false
-    ); ?>
+	"bitrix:main.include", 
+	"useful", 
+	array(
+		"AREA_FILE_RECURSIVE" => "Y",
+		"AREA_FILE_SHOW" => "sect",
+		"AREA_FILE_SUFFIX" => "useful",
+		"COMPONENT_TEMPLATE" => "useful",
+		"EDIT_TEMPLATE" => ""
+	),
+	false
+); ?>
     <!-- /side anonse -->
 
     <!-- side wrap -->
