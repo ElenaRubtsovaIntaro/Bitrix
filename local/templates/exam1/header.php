@@ -20,10 +20,10 @@ if ($iHours >= 9 && $iHours <= 18) {
 }
 
 ?><!DOCTYPE html>
-<html lang="<?= LANGUAGE_ID; ?>">
+<html lang="<? LANGUAGE_ID ?>">
 
 <head>
-    <title><? $APPLICATION->ShowTitle() ?></title>
+    <title><? $APPLICATION->ShowTitle(false) ?></title>
     <? $APPLICATION->ShowHead(); ?>
     <?php
     // CSS
@@ -52,7 +52,7 @@ if ($iHours >= 9 && $iHours <= 18) {
         <div class="inner-wrap">
             <div class="logo-block"><a href="" class="logo">Мебельный магазин</a>
             </div>
-
+            <?= $APPLICATION->getCurDir(); ?>
             <div class="main-phone-block">
                 <? if ($bIsWorkTime): ?>
                     <?

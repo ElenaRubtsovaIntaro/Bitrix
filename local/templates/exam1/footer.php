@@ -141,10 +141,11 @@ use Bitrix\Main\Localization\Loc;
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "POSITION",
-			2 => "COMPANY",
-			3 => "",
+			0 => "DOLJNOST",
+			1 => "NAME_COMP",
+			2 => "POSITION",
+			3 => "COMPANY",
+			4 => "",
 		),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -227,7 +228,7 @@ use Bitrix\Main\Localization\Loc;
         <div class="contacts-block">
             <div class="title-block"><?= Loc::getMessage("FOOTER_CONTACTS_INFORMATION"); ?></div>
             <div class="loc-block">
-                <div class="address">ул. Летняя, стр.12, офис 512</div>
+                <div class="address"><?= Loc::getMessage("FOOTER_ADDRESS") ?></div>
                 <div class="phone">
                     <?
                     $APPLICATION->IncludeFile(
